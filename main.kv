@@ -1,0 +1,22 @@
+<Container>:
+    display: display1
+    rows: 1
+    BoxLayout:
+    	id:div1
+        orientation: "vertical"
+        BoxLayout:
+        	Mode:
+            	on_release: self.text = root.mode_change()
+            Gender:
+            	on_release: self.text = root.gender_change()
+        Losuj1Button:
+            on_release: root.losuj_jeden()
+        Losuj3Button:
+            on_release: root.losuj_trzy()
+        Losuj10Button:
+            on_release: root.losuj_dziesiec()
+
+    Label:
+        id: display1
+        font_size: dp(40)
+        text: ':)'
