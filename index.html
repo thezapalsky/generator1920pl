@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	var lastnames;
+var firstnames;
+
+function generateNames(firstnames, lastnames) {
+    var randomLastNameIndex = Math.floor(Math.random() * lastnames.length) % lastnames.length;
+    var randomFirstNameIndex = Math.floor(Math.random() * lastnames.length) % firstnames.length;
+    $('#name-list').append('<li>'+firstnames[randomFirstNameIndex] + ' ' + lastnames[randomLastNameIndex]+'</li>')
+	
+};
+
+
+$(document).ready(function(){
+	var client1 = new XMLHttpRequest();
+	client1.open('GET', 'https://raw.githubusercontent.com/thezapalsky/generator1920pl/master/nazwiska.txt');
+	client1.onreadystatechange = function() {
+		lastnames = client1.responseText.split('\n');
+	}
+	client1.send();
+	var client2 = new XMLHttpRequest();
+	client2.open('GET', 'https://raw.githubusercontent.com/thezapalsky/generator1920pl/master/imiona.txt');
+	client2.onreadystatechange = function() {
+		firstnames = client2.responseText.split('\n');
+	}
+	client2.send();
+	$('#action-button').on('click',function(){generateNames(firstnames, lastnames)});
+});
+</script>
+</head>
+<body>
+<input id="action-button" type="button" value="Generate"/>
+<ul id="name-list"></ul>
+</body>
+</html>
