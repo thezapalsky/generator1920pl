@@ -1,9 +1,9 @@
 # generator1920pl
 
-Update: 
+## Update: 
 Wersja do odpalenia w [przeglądarce](https://thezapalsky.github.io/generator1920pl/) (credits: Krzysztof W.)
 
-Generator polskich imion i nazwisk z okresu 20-lecia międzywojennego
+## Generator polskich imion i nazwisk z okresu 20-lecia międzywojennego
 
 Przydatny podczas sesji rpg 'call of cthulu' osadzonych w polskich realiach :)
 
